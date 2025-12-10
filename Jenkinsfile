@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    statges{
+    stages{
         stage 'Git repo clone' {
             steps{
                 git branch: 'master',
