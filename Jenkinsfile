@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages{
-        stage 'Git repo clone' {
+        stage('Git repo clone') {
             steps{
                 git branch: 'master',
                     url:'https://github.com/AnitaPK/B73-python-pipeline-jenkin.git'
             }
         }
-        stage 'Create environment' {
+        stage('Create environment') {
             steps {
                 bat ''' 
                     python -m venv venv
@@ -18,7 +18,7 @@ pipeline {
                  '''
             }
         }
-        stage 'Run the test' {
+        stage('Run the test') {
             steps {
                 bat '''
                     . venv/bin/activate
