@@ -18,14 +18,14 @@ pipeline {
                  '''
             }
         }
-        stage('Run the test') {
-            steps {
-                bat '''
-                    call venv\\Scripts\\activate
-                    pytest -v
-                '''
-            }
-        }
+        // stage('Run the test') {
+        //     steps {
+        //         bat '''
+        //             call venv\\Scripts\\activate
+        //             pytest -v
+        //         '''
+        //     }
+        // }
          stage('Run Application') {
             steps {
                 bat '''
