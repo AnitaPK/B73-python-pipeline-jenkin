@@ -12,7 +12,7 @@ pipeline {
             steps {
                 bat ''' 
                     python -m venv venv
-                    . venv/bin/activate
+                     call venv\\Scripts\\activate
                     pip install --upgrade pip
                     pip install -r requirements.txt
                  '''
@@ -21,7 +21,7 @@ pipeline {
         stage('Run the test') {
             steps {
                 bat '''
-                    . venv/bin/activate
+                    call venv\\Scripts\\activate
                     pytest -v
                 '''
             }
@@ -29,7 +29,7 @@ pipeline {
          stage('Run Application') {
             steps {
                 bat '''
-                . venv/bin/activate
+                .call venv\\Scripts\\activate
                 python app/main.py
                 '''
             }
